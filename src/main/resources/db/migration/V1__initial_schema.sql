@@ -20,7 +20,7 @@ CREATE INDEX ON product USING gist(geog);
 
 CREATE TABLE price_history(
 	id SERIAL PRIMARY KEY,
-	productId int REFERENCES Product(id),
+	productId int REFERENCES Product(id) ON DELETE CASCADE,
 	price numeric,
 	timestamp timestamp
 );
